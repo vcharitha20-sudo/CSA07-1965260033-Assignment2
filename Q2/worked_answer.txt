@@ -1,0 +1,10 @@
+Q2 – VLSM, equal subnets and summarisation
+
+Equal-size feasibility
+Five equal subnets sized for 110 hosts each need /25 (126 usable). Five /25 subnets require 640 addresses, exceeding the provided /24. Therefore equal-size allocation is impossible within 192.168.50.0/24; a /22 aggregate can hold five /25 blocks.
+
+VLSM allocation
+Production 192.168.50.0/25 (hosts .1–.126, broadcast .127); Design 192.168.50.128/26 (hosts .129–.190, broadcast .191); Stores 192.168.50.192/27 (hosts .193–.222, broadcast .223); Guest 192.168.50.224/28 (hosts .225–.238, broadcast .239); WAN 192.168.50.240/30 (hosts .241–.242, broadcast .243). Remaining .244–.255 (12 addresses) cannot fit CCTV 20 hosts (/27). Smallest additional contiguous address block is a /27 outside the original /24, or enlarge the parent allocation to /23 and allocate CCTV there.
+
+Summary
+172.18.24.0/24–172.18.27.0/24 summarise exactly as 172.18.24.0/22. Adding .28/24 forces 172.18.24.0/21, covering .24–.31 and wrongly including .29–.31 (768 unowned addresses). Five separate /24 departmental networks consume 1280 addresses for 207 required hosts, leaving 1073 unused addresses, counting the WAN as two host addresses; summarisation can reduce route entries but must not advertise unowned ranges.

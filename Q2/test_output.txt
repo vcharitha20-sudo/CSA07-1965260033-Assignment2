@@ -1,0 +1,3 @@
+Four regional offices  172.18.24.0/22   covers  1024 owned  1024 extra 0
+Fifth office added     172.18.24.0/21   covers  2048 owned  1280 extra 768
+Gap in the numbering   10.4.0.0/22      covers  1024 owned   768 extra 256
