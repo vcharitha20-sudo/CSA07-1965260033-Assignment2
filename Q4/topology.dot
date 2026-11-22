@@ -1,0 +1,1 @@
+graph G {P -- Q [label="4"];P -- R [label="1"];Q -- R [label="2"];Q -- S [label="6"];R -- S [label="3"];S -- T [label="5"];}

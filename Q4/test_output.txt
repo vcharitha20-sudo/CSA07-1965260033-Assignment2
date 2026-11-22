@@ -1,0 +1,24 @@
+ORIGINAL
+converged after 3 rounds
+P  0  3  1  4  9
+Q  3  0  2  5 10
+R  1  2  0  3  8
+S  4  5  3  0  5
+T  9 10  8  5  0
+forwarding table of P:
+ to Q: cost 3, next hop R
+ to R: cost 1, next hop R
+ to S: cost 4, next hop R
+ to T: cost 9, next hop R
+R-S LINK FAILED
+converged after 4 rounds
+P  0  3  1  9 14
+Q  3  0  2  6 11
+R  1  2  0  8 13
+S  9  6  8  0  5
+T 14 11 13  5  0
+forwarding table of P:
+ to Q: cost 3, next hop R
+ to R: cost 1, next hop R
+ to S: cost 9, next hop R
+ to T: cost 14, next hop R

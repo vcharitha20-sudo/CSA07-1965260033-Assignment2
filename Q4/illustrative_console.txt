@@ -1,0 +1,6 @@
+REFERENCE OUTPUT / ILLUSTRATIVE MODEL
+RIPv2 CONVERGENCE MODEL
+P -> Q via R cost 3
+P -> S via R cost 4
+P -> T via R cost 9
+After R-S failure: recalculate vectors

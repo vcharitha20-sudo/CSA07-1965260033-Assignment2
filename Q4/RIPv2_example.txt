@@ -1,0 +1,5 @@
+router rip
+ version 2
+ no auto-summary
+ network <replace with directly connected major network>
+! Configure per router and verify show ip route, show ip protocols.
