@@ -1,0 +1,6 @@
+REFERENCE OUTPUT / ILLUSTRATIVE MODEL
+OSPF BROADCAST SEGMENT MODEL
+DR: R3 (priority 100, ID 3.3.3.3)
+BDR: R2 (priority 100, ID 2.2.2.2)
+R4 priority 0: ineligible
+New priority 200: no preemption

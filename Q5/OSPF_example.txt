@@ -1,0 +1,7 @@
+router ospf 1
+ router-id 3.3.3.3
+ network <network-address> <wildcard-mask> area 0
+ passive-interface default
+ no passive-interface <shared-LAN-interface>
+! On shared interface: ip ospf priority 100
+! Verify show ip ospf neighbor. Adjust router IDs and priorities per router.

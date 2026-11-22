@@ -1,0 +1,13 @@
+Q5 – OSPF election and Dijkstra
+
+DR/BDR
+Among routers present at initial election, R3 is DR and R2 BDR: both priority 100, but R3 has higher router ID. Priority-0 R4 cannot be elected. If R3 fails, R2 becomes DR and another eligible router becomes BDR. A later priority-200 router does not pre-empt the established DR.
+
+Adjacencies
+Full mesh among 6 routers requires 6×5/2=15 adjacencies; with DR and BDR, 2n−3=9 full adjacencies for n=6 (DR–BDR plus each of 4 DROTHERs to both). For n=20: full mesh 190; DR/BDR topology 37.
+
+Dijkstra from A
+A→C cost 2; A→C→B cost 3; A→C→B→D cost 7; A→C→E cost 9; A→C→E→F cost 11. Shortest-path tree edges A–C, C–B, B–D, C–E, E–F. All destinations have next hop C from A.
+
+Alternative
+IS-IS DIS election is pre-emptive while OSPF DR election is non-pre-emptive; IS-IS runs directly over Layer 2 and OSPF over IP. Operational familiarity and interoperability also matter for a growing provider.
