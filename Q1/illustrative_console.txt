@@ -1,0 +1,6 @@
+REFERENCE OUTPUT / ILLUSTRATIVE MODEL
+IPv4 SUBNET CHECK
+10.20.7.255/22 -> broadcast, NOT HOST
+172.20.70.0/19 -> valid host
+192.168.45.130/26 -> gateway off subnet
+4000-byte IP packet -> 1500,1500,1040

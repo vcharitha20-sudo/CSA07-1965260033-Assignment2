@@ -1,0 +1,10 @@
+Q1 – IPv4 host validity and fragmentation
+
+Address analysis
+Library 10.20.7.255/22: network 10.20.4.0, broadcast 10.20.7.255, hosts 10.20.4.1–10.20.7.254; invalid broadcast address; gateway 10.20.4.1 is on subnet. Lab 172.20.70.0/19: network 172.20.64.0, broadcast 172.20.95.255, hosts 172.20.64.1–172.20.95.254; valid host (not a /19 network boundary); gateway valid. Hostel 192.168.45.130/26: network 192.168.45.128, broadcast 192.168.45.191, hosts .129–.190; host valid but gateway 192.168.45.1 is off subnet. Branch 198.51.100.34/28: network .32, broadcast .47, hosts .33–.46; valid host; no gateway supplied.
+
+IPv4 fragmentation
+Original 4000 bytes includes 20-byte header: payload 3980. MTU 1500 permits 1480 payload per full fragment. Fragment 1: total 1500, offset 0, MF=1. Fragment 2: total 1500, offset 185 (1480/8), MF=1. Fragment 3: payload 1020, total 1040, offset 370, MF=0. Offsets are in eight-byte units.
+
+Evaluation
+Path MTU Discovery avoids fragmentation and reassembly overhead; blocked ICMP fragmentation-needed messages can create a PMTU black hole. Datagram packets may take different routes and arrive out of order; virtual circuits typically establish a common forwarding path. DHCP could assign correct mask/gateway and avoid duplicate or invalid host assignments, but cannot repair a wrong upstream design. For 180 simultaneous hosts, /24 gives 254 usable addresses; 300 registered users can share leases only if no more than 254 leases remain active, including stale leases.
