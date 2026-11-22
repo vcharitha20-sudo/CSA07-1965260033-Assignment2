@@ -1,0 +1,16 @@
+Q6 – IPv6, ICMP, multicast and SDN
+
+IPv6
+2001:0db8:00a0:0000:0000:0000:00ff:0001 → 2001:db8:a0::ff:1. MAC 3C:52:82:4E:11:07 → EUI-64 3e52:82ff:fe4e:1107 (insert ff:fe, flip U/L bit). Link-local fe80::3e52:82ff:fe4e:1107.
+
+ICMP
+Ping uses Echo Request/Reply. IPv4 PMTUD relies on Destination Unreachable type 3 code 4 when DF is set; filtering this ICMP can cause stalled transfers. IPv6 uses Packet Too Big instead.
+
+Multicast
+239.130.5.9 maps to 01:00:5e:02:05:09: only 23 IPv4 multicast group bits map into Ethernet MAC, so 32 groups can collide on the same MAC. IGMP snooping limits forwarding to interested switch ports.
+
+OpenFlow
+SSH TCP/22 to 10.8.4.4: drop (priority 300); HTTP to 10.8.4.4: port 2 (priority 200); UDP to 10.9.1.1: controller (priority 0). Centralized control improves policy consistency but creates controller availability and security dependencies.
+
+IPv6 strategy
+500,000 directly public-IPv4-addressed sensors need at least a /13 allocation (524,288 total addresses); dual-stack does not inherently require one public IPv4 per sensor if private addressing/NAT is used. IPv6-only sensors using NAT64/DNS64 can share a much smaller IPv4 translation pool, depending on concurrent flows and port capacity, while keeping translator state. Prefer IPv6-first with controlled translation and legacy compatibility testing.
