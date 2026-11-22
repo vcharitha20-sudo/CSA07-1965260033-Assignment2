@@ -1,0 +1,3 @@
+ISP1: configure 203.0.113.1/30 on connected port and loopback 8.8.8.8/32.
+ISP2: configure 198.51.100.1/30 on connected port and loopback 8.8.8.8/32.
+Note: simultaneous identical loopbacks are separate test destinations; verify routes for replies.

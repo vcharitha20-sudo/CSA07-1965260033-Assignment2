@@ -1,0 +1,7 @@
+Q3 – Longest-prefix matching and failover
+
+Next hops
+172.20.18.70 → 10.1.1.14 (/26); 172.20.18.130 → 10.1.1.10 (/24); 172.20.20.5 → 10.1.1.6 (/20); 172.20.99.9 → 10.1.1.2 (/16); 192.168.200.15 → 10.1.1.18 (OSPF); 8.8.8.8 → 203.0.113.1 (default). Most-specific matching prefix wins.
+
+Failover
+Primary static default route administrative distance 1; backup floating default route administrative distance 250. When G0/1 goes down, the primary route disappears and the backup becomes eligible, provided its next hop is reachable. When restored, primary wins again. A physical link remaining up while the ISP fails upstream may not trigger basic static-route failover. IP SLA with 5-second probes and 3 missed replies typically detects failure in roughly 10–15 seconds plus scheduling/reaction overhead; link-down failover is usually faster when the interface itself fails.
