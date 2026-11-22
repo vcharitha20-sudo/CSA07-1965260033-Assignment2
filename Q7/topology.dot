@@ -1,0 +1,1 @@
+digraph G {rankdir=LR; node [shape=box,style=rounded]; LAN -> R1; R1 -> ISP1 [label="tracked primary"]; R1 -> ISP2 [label="floating backup"]; ISP1 -> Internet; ISP2 -> Internet;}

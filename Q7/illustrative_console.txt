@@ -1,0 +1,7 @@
+REFERENCE OUTPUT / ILLUSTRATIVE MODEL
+REDESIGN COMPARISON MODEL
+Original: single primary ISP, backup standby
+Revised: tracking + floating backup
+Primary reachable -> primary route active
+Primary probe fails -> backup route active
+Validate with Packet Tracer before submission

@@ -1,0 +1,16 @@
+Q7 – Day-4 redesign and validation
+
+Selected weakness
+Use Q2 industrial-park VLSM: 192.168.50.0/24 allocates five departments with 12 leftover addresses, insufficient for a 20-host CCTV /27.
+
+Measurable objective
+Support the added 20-host CCTV subnet without renumbering the five existing subnets and without overlapping address ranges.
+
+Revised design
+Keep existing VLSM addresses and obtain 192.168.51.0/27 for CCTV; allocate gateway 192.168.51.1, camera hosts .2–.30, broadcast .31. Add a VLAN and router interface/subinterface for the new subnet, with route advertisements limited to owned prefixes.
+
+Prediction and test
+Before: 0 usable /27 CCTV networks in the 12 remaining addresses. After: 1 new /27 with 30 usable hosts, meeting the 20-host requirement. In Packet Tracer, configure baseline and revised topology, ping and traceroute to camera host, check show ip route, and repeat after a simulated link failure.
+
+Trade-off
+A new address allocation and VLAN increase routing and switch configuration, but avoid disruptive renumbering. Original /24 plan remains simpler when CCTV expansion is not needed.

@@ -1,0 +1,5 @@
+VLAN CCTV: 192.168.51.0/27
+Gateway 192.168.51.1/27
+Camera host range 192.168.51.2-192.168.51.30
+Broadcast 192.168.51.31
+Add VLAN, L3 gateway, routing entry and ACL as required by topology.
